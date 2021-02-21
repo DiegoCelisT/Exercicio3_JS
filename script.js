@@ -1,7 +1,7 @@
 function Ingressar_Time () {
     let Time = {}
-    Time.Nome = prompt ("Ingresse o nome do time:")
-    Time.Origem = prompt ("Qual o país de origem do time?")
+    Time.Nome = prompt ("Ingresse o nome de um time:")
+    Time.Origem = prompt ("Qual o país de origem desse time?")
     let Titulos = prompt ("Quantos titulos de liga ele têm?")
     Time.Titulos = Number (Titulos)
     return Time
