@@ -1,0 +1,1 @@
+Vou criar um torneio de futebol, vão ser ingresados os dados de "nome do time", "pais de origem", "posição da liga"
