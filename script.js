@@ -45,8 +45,9 @@ if(grupo_dos_mais_ganhadores.length===1){
     console.log (`O time com mais títulos é ${grupo_dos_mais_ganhadores[0]} com ${mais_ganhador} títulos`) //Só um time
 }
 else{
-    for (let i=0; i<grupo_dos_mais_ganhadores.length-1;i++)
+    for (let i=0; i<grupo_dos_mais_ganhadores.length-1;i++){
     lista_ganhadora = lista_ganhadora + `${grupo_dos_mais_ganhadores[i]}, ` //poderia imprimir aqui, mas vou arrumar para que se veja melhor
+    }
 }
 
     //Arrumadinha para visualização final:
@@ -54,4 +55,37 @@ else{
     lista_ganhadora = lista_ganhadora.slice(0, -2) + ` e ${grupo_dos_mais_ganhadores[grupo_dos_mais_ganhadores.length-1]}` 
     //com aquele slice estou retirando o último espaço e a última vírgula
     console.log (`Os times com mais títulos são: `+lista_ganhadora+ ` com ${mais_ganhador} títulos`)
+    }
+
+    //MENSAGENS PARA MEU HTML
+
+    function Mensagens_no_HTML () {
+    var Mensagens = document.querySelector ('div')
+    var Mensagem1 = document.createElement ('p')
+    Mensagem1.textContent = `Vamos ter ${times_no_torneio.length} times em nosso torneio, e eles são:`
+    Mensagens.appendChild (Mensagem1)
+    
+    //Lista de times
+    var Mensagem_times = document.createElement ('p')
+    let lista_de_times = ""
+    for (let i=0; i<times_no_torneio.length-1;i++){
+    lista_de_times = lista_de_times + `${times_no_torneio[i].Nome}, `
+    }
+    lista_de_times = lista_de_times.slice(0, -2) + ` e ${times_no_torneio[times_no_torneio.length-1].Nome}` //Aquela concertadinha do último item
+    Mensagem_times.textContent = lista_de_times
+    Mensagens.appendChild (Mensagem_times)
+
+    //Time(s) mais ganhador(es)
+
+    if (grupo_dos_mais_ganhadores.length===1){ //Só um time
+        var Mensagem3 = document.createElement ('p')
+        Mensagem3.textContent = `O time com mais títulos é ${grupo_dos_mais_ganhadores[0]} com ${mais_ganhador} títulos`
+        Mensagens.appendChild (Mensagem3) 
+    }
+    else{
+        var Mensagem4 = document.createElement ('p')
+        Mensagem4.textContent = `Os times com mais títulos são: `+lista_ganhadora+ ` com ${mais_ganhador} títulos`
+        Mensagens.appendChild (Mensagem4) 
+    }
+           
     }
